@@ -1,0 +1,120 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Title</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css">
+        <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="video-container">
+
+        <video id="my-video" playsinline controls>
+            <source src="Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="sidebar">
+        
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-bar" placeholder="Search classes...">
+            <ul class="search-dropdown" id="search-dropdown"></ul>
+        </div>
+
+        <div class="progress-percentage" id="progress-percentage">Completion: 0%</div>
+        <div class="progress-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="center-container">
+            <button class="view-progress-btn" onclick="showProgress()">
+                <i class="fas fa-chart-bar"></i> View Progress
+            </button>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <div class="popup" id="popup">
+            <canvas id="progress-chart" width="400" height="400"></canvas>
+            <!--Chart Download btn-->
+            <button class="download-btn" id="download-btn">
+            <i class="fas fa-download"></i> Download Chart</button>
+            <!--Chart close btn-->
+            <button class="close-btn" onclick="closePopup()">
+            <i class="fas fa-times-circle"></i>Close</button>
+        </div>
+        <h2 id="video-title"><i class="fas fa-play-circle"></i> Select a video to play</h2>
+
+        <!--Accordion Section-->
+        <div class="accordion">
+
+            <!--Accordion-1-->
+            <div class="accordion-item">
+                <div class="accordion-header">Accordion-1</div>
+                <div class="accordion-content">
+                    <ol>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!--Accordion-2-->
+            <div class="accordion-item">
+                <div class="accordion-header">Accordion-2</div>
+                <div class="accordion-content">
+                    <ol>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!--Accordion-3-->
+            <div class="accordion-item">
+                <div class="accordion-header">Accordion-3</div>
+                <div class="accordion-content">
+                    <ol>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                        <li data-url="#URL" data-title="#TopicName">#TOPIC<input type="checkbox" class="mark-completed checkbox" onclick="markCompleted(this)"></li>
+                    </ol>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.plyr.io/3.6.4/plyr.js"></script>
+</body>
+</html>
